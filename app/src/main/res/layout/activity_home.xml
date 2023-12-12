@@ -10,16 +10,21 @@
         android:id="@+id/materialButton"
         android:layout_width="169dp"
         android:layout_height="183dp"
+        android:layout_marginStart="48dp"
         android:padding="10dp"
-        android:text="Cari Parkir sekarang"
+        android:text="Histori Parkir"
         app:cornerRadius="20dp"
-        app:icon="@drawable/baseline_local_parking_24"
+        app:icon="@drawable/baseline_history_24"
         app:iconGravity="top"
         app:iconSize="100dp"
-        tools:layout_editor_absoluteX="217dp"
-        tools:layout_editor_absoluteY="184dp" />
+        app:layout_constraintBottom_toBottomOf="@+id/button_search_parking"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/button_search_parking"
+        app:layout_constraintTop_toTopOf="@+id/button_search_parking" />
 
     <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/profile"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_margin="10dp"
@@ -54,16 +59,19 @@
         tools:layout_editor_absoluteY="61dp" />
 
     <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_search_parking"
         android:layout_width="169dp"
         android:layout_height="183dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="224dp"
         android:padding="10dp"
-        android:text="Cari Parkir sekarang"
+        android:text="Cari Parkir"
         app:cornerRadius="20dp"
         app:icon="@drawable/baseline_local_parking_24"
         app:iconGravity="top"
         app:iconSize="100dp"
-        tools:layout_editor_absoluteX="33dp"
-        tools:layout_editor_absoluteY="184dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <!--    <androidx.fragment.app.FragmentContainerView-->
 <!--        android:id="@+id/fragmentContainerView"-->

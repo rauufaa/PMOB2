@@ -12,9 +12,12 @@ import com.example.pmob2.databinding.ActivityHomeBinding
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
+import com.google.android.material.button.MaterialButton
+import com.google.android.material.imageview.ShapeableImageView
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
+import kotlinx.coroutines.processNextEventInCurrentThread
 
 class HomeActivity : AppCompatActivity() {
     private lateinit var mGoogleSignInClient: GoogleSignInClient
@@ -27,8 +30,8 @@ class HomeActivity : AppCompatActivity() {
     private var email: String? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-//        binding = ActivityHomeBinding.inflate(layoutInflater)
-        setContentView(R.layout.activity_home)
+        binding = ActivityHomeBinding.inflate(layoutInflater)
+        setContentView(binding.root)
         mAuth = FirebaseAuth.getInstance()
 
 
@@ -52,6 +55,32 @@ class HomeActivity : AppCompatActivity() {
         } else {
             // Handle the case where the user is not signed in
         }
+
+//        findViewById<MaterialButton>(R.id.materialButton).setOnClickListener(){
+//            val parkingHistory = Intent(this, ParkingHistoryActivity::class.java)
+//            startActivity(parkingHistory)
+//        }
+
+        binding.materialButton.setOnClickListener(){
+            val parkingHistoryActivity = Intent(this, ParkingHistoryActivity::class.java)
+            startActivity(parkingHistoryActivity)
+        }
+
+//        findViewById<ShapeableImageView>(R.id.profile).setOnClickListener(){
+//
+//        }
+
+        binding.profile.setOnClickListener(){
+            val profileActivity = Intent(this, ProfileActivity::class.java)
+            startActivity(profileActivity)
+        }
+
+        binding.buttonSearchParking.setOnClickListener(){
+            val parkingLocationActivity = Intent(this, ParkingLocationActivity::class.java)
+            startActivity(parkingLocationActivity)
+        }
+
+
 
 
 
