@@ -52,29 +52,7 @@ class CarParkingFragment : Fragment() {
         recyclerView.layoutManager = LinearLayoutManager(context)
         val adapter = ParkingCarAdapter(reqData)
         recyclerView.adapter = adapter
-//        db.collection("parking_locaton")
-//            .addSnapshotListener{value, e->
 //
-//                if (e != null) {
-//                    Log.w(TAG, "Listen failed.", e)
-//                    return@addSnapshotListener
-//                }
-//
-//                val cities = ArrayList<String>()
-//
-//                for (doc in value!!) {
-//                    val pinLoc = doc.getGeoPoint("lokasi")
-//                    val data = ParkingLocationModel(doc.id,doc.data["nama"].toString(), pinLoc)
-//                    reqData.add(data)
-//                    Log.w("data", "Listen failed. ${data}")
-////                    doc.getString("nama")?.let {
-////                        cities.add(it)
-////                    }
-//
-//                }
-//                adapter.notifyDataSetChanged()
-//
-//            }
         db.collection("car_park")
             .get()
             .addOnSuccessListener { result ->
@@ -83,13 +61,6 @@ class CarParkingFragment : Fragment() {
                     val pinLoc = document.getGeoPoint("lokasi")
                     val data = ParkingLocationModel(document.id, document.data["jenis"].toString(),document.data["nama"].toString(), document.data["alamat"].toString(), document.data["jumlah"].toString(), pinLoc, document.data["harga"].toString())
                     reqData.add(data)
-
-
-
-
-
-
-
                     Log.d("Pesan", "${document.id} => ${document.data["nama"]}")
                 }
                 adapter.notifyDataSetChanged()

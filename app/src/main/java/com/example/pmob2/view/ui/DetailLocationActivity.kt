@@ -25,10 +25,8 @@ import java.util.Date
 
 class DetailLocationActivity : AppCompatActivity() {
     private lateinit var binding: ActivityDetailLocationBinding
-    private lateinit var mGoogleSignInClient: GoogleSignInClient
     private lateinit var mAuth: FirebaseAuth
     private lateinit var db: FirebaseFirestore
-    private lateinit var map: HashMap<String, Any>
     private lateinit var harga: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -47,9 +45,9 @@ class DetailLocationActivity : AppCompatActivity() {
                     binding.textViewOperasional.text = "Jam Operasional :   ${document.data?.get("operasional").toString()}"
                     binding.textViewLocation.text = "Lokasi :   ${document.data?.get("alamat").toString()}"
                     binding.textViewSisaDetail.text = "Sisa : ${document.data?.get("jumlah")}"
+                    binding.textViewParkiranNama.text = document.data?.get("nama").toString()
                     harga = document.data?.get("biaya").toString()
-//                    map["latitude"] = document.getGeoPoint("lokasi")?.latitude.toString()
-//                    map["longitude"] = document.getGeoPoint("lokasi")?.longitude.toString()
+
                     binding.buttonArahLokasi.setOnClickListener {
                         var mode:String
                         if(intent.getStringExtra("JENIS_PARKIR").toString() == "motor_park"){
@@ -79,14 +77,8 @@ class DetailLocationActivity : AppCompatActivity() {
 
         }
 
-
-
-
-
     }
     private fun tambahData(){
-//        val database: FirebaseDatabase = FirebaseDatabase.getInstance()
-//        val pekerjaanRef: DatabaseReference = database.getReference("Pekerjaan")
         binding.buttonPesanParkir.setOnClickListener {
             val dialogView = LayoutInflater.from(this).inflate(R.layout.dialog_pesan_parkir, null)
 

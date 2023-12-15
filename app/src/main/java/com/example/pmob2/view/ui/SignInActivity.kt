@@ -34,8 +34,6 @@ class SignInActivity : AppCompatActivity() {
 
     private lateinit var auth: FirebaseAuth
 
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sign_in)
@@ -52,9 +50,6 @@ class SignInActivity : AppCompatActivity() {
             startActivity(intent)
             finish() // finish the current activity to prevent the user from coming back to the SignInActivity using the back button
         }
-
-
-
 
         val signInButton = findViewById<SignInButton>(R.id.signInButton)
         signInButton.setOnClickListener {

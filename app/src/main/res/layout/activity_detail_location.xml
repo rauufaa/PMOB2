@@ -91,7 +91,7 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/textView9"
+                android:id="@+id/textViewParkiranNama"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="28dp"
@@ -111,7 +111,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/textView9"
+                app:layout_constraintTop_toBottomOf="@id/textViewParkiranNama"
                 app:srcCompat="@drawable/front_app_image" />
 
             <TextView
@@ -150,10 +150,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Sisa"
-                app:layout_constraintBottom_toBottomOf="@+id/textView9"
+                app:layout_constraintBottom_toBottomOf="@+id/textViewParkiranNama"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/textView9"
-                app:layout_constraintTop_toTopOf="@+id/textView9" />
+                app:layout_constraintStart_toEndOf="@+id/textViewParkiranNama"
+                app:layout_constraintTop_toTopOf="@+id/textViewParkiranNama" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </ScrollView>

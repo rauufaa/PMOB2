@@ -39,8 +39,6 @@ class MotorParkingFragment : Fragment() {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
         }
-
-
     }
 
     override fun onCreateView(
@@ -49,8 +47,6 @@ class MotorParkingFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         val reqData = ArrayList<ParkingLocationModel>()
-
-
         db = FirebaseFirestore.getInstance()
         val view = inflater.inflate(R.layout.fragment_motor_parking, container, false)
         val recyclerView = view.findViewById<RecyclerView>(R.id.recyclerView_motor_parking)

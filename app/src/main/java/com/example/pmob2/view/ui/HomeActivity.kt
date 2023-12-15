@@ -34,18 +34,14 @@ class HomeActivity : AppCompatActivity() {
     private lateinit var idParkiran: String
     private lateinit var tipePark: String
 
-
-
     private lateinit var binding: ActivityHomeBinding
 
-    private var email: String? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
         mAuth = Firebase.auth
         db = Firebase.firestore
-
 
         val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
             .requestIdToken(getString(R.string.default_web_client_id))
@@ -54,37 +50,16 @@ class HomeActivity : AppCompatActivity() {
 
         mGoogleSignInClient = GoogleSignIn.getClient(this, gso)
 
-
-
-//        val textView = findViewById<TextView>(R.id.credential)
-
         val auth = Firebase.auth
         val user = auth.currentUser
         binding.textViewHalloUser.text = "Hallo, ${mAuth.currentUser?.displayName}"
 
-
-
-
-        if (user != null) {
-            val userName = user.displayName
-//            textView.text = "Welcome, " + userName
-        } else {
-            // Handle the case where the user is not signed in
-        }
-
-//        findViewById<MaterialButton>(R.id.materialButton).setOnClickListener(){
-//            val parkingHistory = Intent(this, ParkingHistoryActivity::class.java)
-//            startActivity(parkingHistory)
-//        }
 
         binding.materialButton.setOnClickListener(){
             val parkingHistoryActivity = Intent(this, ParkingHistoryActivity::class.java)
             startActivity(parkingHistoryActivity)
         }
 
-//        findViewById<ShapeableImageView>(R.id.profile).setOnClickListener(){
-//
-//        }
 
         binding.profile.setOnClickListener(){
             val profileActivity = Intent(this, ProfileActivity::class.java)
@@ -130,15 +105,6 @@ class HomeActivity : AppCompatActivity() {
 
         selesaiParkir()
 
-
-
-// Inside onCreate() method
-//        val sign_out_button = findViewById<Button>(R.id.signOut)
-//        sign_out_button.setOnClickListener {
-//            signOutAndStartSignInActivity()
-//        }
-
-        //
         binding.cardView.setOnClickListener{
             val detailParkirIntent = Intent(this, DetailLocationActivity::class.java)
             detailParkirIntent.putExtra("JENIS_PARKIR", tipePark)
