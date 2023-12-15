@@ -47,7 +47,9 @@ class ParkingLocationActivity : AppCompatActivity() {
             }
         })
 
-
+        binding.buttonBack2.setOnClickListener{
+            finish()
+        }
 
     }
 }

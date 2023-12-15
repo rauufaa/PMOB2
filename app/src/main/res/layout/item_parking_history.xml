@@ -16,13 +16,12 @@
     android:backgroundTint="@color/cardview_light_background">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:padding="10dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        >
+        android:padding="10dp">
 
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/textViewMulai"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="3 Sep, 09:28"
@@ -34,67 +33,65 @@
             android:layout_width="130dp"
             android:layout_height="130dp"
             android:src="@drawable/front_app_image"
+            app:layout_constraintRight_toLeftOf="@+id/textViewParkingName"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView"
-            app:layout_constraintRight_toLeftOf="@+id/textViewParkingName"/>
+            app:layout_constraintTop_toBottomOf="@+id/textViewMulai" />
 
         <TextView
             android:id="@+id/textViewParkingName"
-            android:layout_width="wrap_content"
+            android:layout_width="120dp"
             android:layout_height="wrap_content"
             android:text="I'm a title"
             android:textSize="25dp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="@+id/imageview_location"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.18"
+            app:layout_constraintEnd_toStartOf="@+id/textViewBiayaHistory"
+            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/imageview_location"
             app:layout_constraintTop_toTopOf="@+id/imageview_location"
             app:layout_constraintVertical_bias="0.04000002" />
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/textViewBiayaHistory"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Rp2.000"
             app:layout_constraintBottom_toBottomOf="@+id/imageview_location"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.75"
+            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/textViewParkingName"
             app:layout_constraintTop_toTopOf="@+id/imageview_location"
             app:layout_constraintVertical_bias="0.06999999" />
 
         <TextView
-            android:id="@+id/textView3"
+            android:id="@+id/textViewMerkHistory"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="120dp"
-            android:text="Selesai"
-            app:layout_constraintBottom_toBottomOf="@+id/imageView"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/imageView"
-            app:layout_constraintVertical_bias="1.0" />
-
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:src="@drawable/front_app_image"
-            app:layout_constraintBottom_toBottomOf="@+id/imageview_location"
-            app:layout_constraintEnd_toStartOf="@+id/textView3"
-            app:layout_constraintHorizontal_bias="0.815"
-            app:layout_constraintStart_toEndOf="@+id/imageview_location"
-            app:layout_constraintTop_toTopOf="@+id/imageview_location"
-            app:layout_constraintVertical_bias="0.79" />
+            android:text="Merk"
+            app:layout_constraintBottom_toTopOf="@+id/textViewSelesai"
+            app:layout_constraintStart_toStartOf="@+id/textViewPlatKendaraanHistory"
+            app:layout_constraintTop_toBottomOf="@+id/textViewPlatKendaraanHistory" />
 
         <TextView
-            android:id="@+id/textView_location"
+            android:id="@+id/textViewPlatKendaraanHistory"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:text="Jl. Bimokurdo"
+            android:text="Plat"
+            app:layout_constraintBottom_toTopOf="@+id/textViewMerkHistory"
             app:layout_constraintStart_toStartOf="@+id/textViewParkingName"
             app:layout_constraintTop_toBottomOf="@+id/textViewParkingName" />
+
+        <TextView
+            android:id="@+id/textViewSelesai"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="136dp"
+            android:text="Selesai"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/textViewMerkHistory"
+            app:layout_constraintTop_toBottomOf="@+id/textViewMerkHistory" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

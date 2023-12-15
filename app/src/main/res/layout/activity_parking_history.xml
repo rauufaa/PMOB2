@@ -7,7 +7,7 @@
     tools:context=".view.ui.ParkingHistoryActivity">
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/materialButton2"
+        android:id="@+id/buttonBackHistory"
         android:layout_width="65dp"
         android:layout_height="41dp"
         android:layout_marginStart="24dp"
@@ -25,9 +25,9 @@
         android:layout_height="wrap_content"
         android:text="History Parkir"
         android:textSize="25sp"
-        app:layout_constraintBottom_toBottomOf="@+id/materialButton2"
-        app:layout_constraintStart_toEndOf="@+id/materialButton2"
-        app:layout_constraintTop_toTopOf="@+id/materialButton2" />
+        app:layout_constraintBottom_toBottomOf="@+id/buttonBackHistory"
+        app:layout_constraintStart_toEndOf="@+id/buttonBackHistory"
+        app:layout_constraintTop_toTopOf="@+id/buttonBackHistory" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_view"

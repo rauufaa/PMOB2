@@ -46,4 +46,9 @@ private lateinit var binding: ActivityMapsParkingBinding
         mMap.addMarker(MarkerOptions().position(sydney).title("Marker in Sydney"))
         mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney))
     }
+
+    fun getDirectionUrl(){
+
+    }
+
 }

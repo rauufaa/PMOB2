@@ -1,6 +1,7 @@
 package com.example.pmob2.view.ui
 
 import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -27,6 +28,8 @@ class DetailLocationActivity : AppCompatActivity() {
     private lateinit var mGoogleSignInClient: GoogleSignInClient
     private lateinit var mAuth: FirebaseAuth
     private lateinit var db: FirebaseFirestore
+    private lateinit var map: HashMap<String, Any>
+    private lateinit var harga: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -44,13 +47,41 @@ class DetailLocationActivity : AppCompatActivity() {
                     binding.textViewOperasional.text = "Jam Operasional :   ${document.data?.get("operasional").toString()}"
                     binding.textViewLocation.text = "Lokasi :   ${document.data?.get("alamat").toString()}"
                     binding.textViewSisaDetail.text = "Sisa : ${document.data?.get("jumlah")}"
+                    harga = document.data?.get("biaya").toString()
+//                    map["latitude"] = document.getGeoPoint("lokasi")?.latitude.toString()
+//                    map["longitude"] = document.getGeoPoint("lokasi")?.longitude.toString()
+                    binding.buttonArahLokasi.setOnClickListener {
+                        var mode:String
+                        if(intent.getStringExtra("JENIS_PARKIR").toString() == "motor_park"){
+                            mode = "l"
+                        }else mode="d"
+
+                        val gmmIntentUri = Uri.parse("google.navigation:q=${document.getGeoPoint("lokasi")?.latitude.toString()},${document.getGeoPoint("lokasi")?.longitude.toString()}&mode=${mode}&avoid=tf")
+
+                        val mapIntent = Intent(Intent.ACTION_VIEW, gmmIntentUri)
+
+                        mapIntent.setPackage("com.google.android.apps.maps")
+
+                        startActivity(mapIntent)
+                    }
+
             }
         tambahData()
 
-        binding.buttonArahLokasi.setOnClickListener {
-            val mapsIntent = Intent(this, MapsParkingActivity::class.java)
-            startActivity(mapsIntent)
+        binding.buttonBack3.setOnClickListener{
+            finish()
+
         }
+        if(intent.getBooleanExtra("homeActivity", false)){
+            binding.buttonPesanParkir.isActivated = false
+            binding.buttonPesanParkir.isEnabled = false
+            binding.buttonPesanParkir.isClickable = false
+
+        }
+
+
+
+
 
     }
     private fun tambahData(){
@@ -70,6 +101,7 @@ class DetailLocationActivity : AppCompatActivity() {
                     parkirData["noPlat"] = platKendaraan
                     parkirData["merkKendaraan"] = merkKendaraan
                     parkirData["on"] = true
+                    parkirData["biaya"] = harga
                     parkirData["user"] = mAuth.currentUser?.email.toString()
                     val sdf = SimpleDateFormat("dd/M/yyyy hh:mm")
                     val currentDate = sdf.format(Date())

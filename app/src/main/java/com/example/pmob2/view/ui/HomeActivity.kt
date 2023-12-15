@@ -9,6 +9,7 @@ import android.view.View
 import android.widget.Button
 import android.widget.TextView
 import com.example.pmob2.R
+import com.example.pmob2.databinding.ActivityDetailLocationBinding
 import com.example.pmob2.databinding.ActivityHomeBinding
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
@@ -138,7 +139,13 @@ class HomeActivity : AppCompatActivity() {
 //        }
 
         //
-
+        binding.cardView.setOnClickListener{
+            val detailParkirIntent = Intent(this, DetailLocationActivity::class.java)
+            detailParkirIntent.putExtra("JENIS_PARKIR", tipePark)
+            detailParkirIntent.putExtra("ID_PARKIRAN", idParkiran)
+            detailParkirIntent.putExtra("homeActivity", true)
+            startActivity(detailParkirIntent)
+        }
     }
 
     private fun alamatParkiran(){

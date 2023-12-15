@@ -31,8 +31,8 @@ class ProfileActivity : AppCompatActivity() {
             .build()
 
         mGoogleSignInClient = GoogleSignIn.getClient(this, gso)
-        binding.textView7.text = mAuth.currentUser?.displayName
-        binding.textView3.text = mAuth.currentUser?.email
+        binding.textViewDisplayName.text = mAuth.currentUser?.displayName
+        binding.textViewEmail.text = mAuth.currentUser?.email
         setContentView(binding.root)
 
 
