@@ -6,23 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".view.ui.HomeActivity">
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/materialButton"
-        android:layout_width="169dp"
-        android:layout_height="183dp"
-        android:layout_marginStart="48dp"
-        android:padding="10dp"
-        android:text="Histori Parkir"
-        app:cornerRadius="20dp"
-        app:icon="@drawable/baseline_history_24"
-        app:iconGravity="top"
-        app:iconSize="100dp"
-        app:layout_constraintBottom_toBottomOf="@+id/button_search_parking"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/button_search_parking"
-        app:layout_constraintTop_toTopOf="@+id/button_search_parking" />
-
     <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/profile"
         android:layout_width="50dp"
@@ -31,75 +14,235 @@
         android:padding="5dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.911"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="0.177"
+        app:layout_constraintStart_toEndOf="@+id/textView2"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.058"
+        app:layout_constraintVertical_bias="0.323"
         app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize50Percent"
         app:srcCompat="@mipmap/ic_launcher"
         app:strokeColor="@android:color/darker_gray"
         app:strokeWidth="5dp" />
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottomNavigation"
-        android:layout_width="414dp"
-        android:layout_height="65dp"
-        android:layout_marginBottom="1dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:menu="@menu/menu_bottom_nav" />
-
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Bingung cari parkir?"
-        tools:layout_editor_absoluteX="43dp"
-        tools:layout_editor_absoluteY="61dp" />
+        android:layout_marginTop="4dp"
+        android:text="Bingung cari parkir? Ayo Cari!"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/textViewHalloUser"
+        app:layout_constraintTop_toBottomOf="@+id/textViewHalloUser" />
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/button_search_parking"
-        android:layout_width="169dp"
-        android:layout_height="183dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="224dp"
-        android:padding="10dp"
-        android:text="Cari Parkir"
-        app:cornerRadius="20dp"
-        app:icon="@drawable/baseline_local_parking_24"
-        app:iconGravity="top"
-        app:iconSize="100dp"
+    <TextView
+        android:id="@+id/textViewHalloUser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="220dp"
+        android:text="Hallo, "
+        android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <!--    <androidx.fragment.app.FragmentContainerView-->
-<!--        android:id="@+id/fragmentContainerView"-->
-<!--        android:name="com.example.pmob2.view.ui.MapsCariParkirFragment"-->
-<!--        android:layout_width="408dp"-->
-<!--        android:layout_height="663dp"-->
-<!--        android:layout_marginBottom="2dp"-->
-<!--        app:layout_constraintBottom_toTopOf="@+id/bottomNavigation"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toTopOf="parent"-->
-<!--        app:layout_constraintVertical_bias="0.0" />-->
-<!--    <TextView-->
-<!--        android:id="@+id/credential"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginTop="156dp"-->
-<!--        android:text="TextView"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintHorizontal_bias="0.498"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toTopOf="parent" />-->
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="346dp"
+        android:layout_height="191dp"
+        android:layout_marginStart="200dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/front_app_image" />
 
-<!--    <Button-->
-<!--        android:id="@+id/signOut"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:text="Sign Out"-->
-<!--        tools:layout_editor_absoluteX="163dp"-->
-<!--        tools:layout_editor_absoluteY="557dp" />-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="412dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="1dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="30dp"
+            android:backgroundTint="@color/cardview_light_background"
+            android:padding="30dp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/button_search_parking"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/cardView2"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cardView2">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="10dp">
+
+                <TextView
+                    android:id="@+id/textViewParkingName"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="Nama Lokasi"
+                    android:textSize="25dp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toStartOf="@+id/textViewPlatKendaraan"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/textView_location"
+                    android:layout_width="170dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="20dp"
+                    android:text="Jl. Bimokurdo"
+                    app:layout_constraintEnd_toStartOf="@+id/buttonSelesaikan"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textViewParkingName" />
+
+                <TextView
+                    android:id="@+id/textViewPlatKendaraan"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:text="PlatKendaraan"
+                    android:visibility="visible"
+                    app:layout_constraintBottom_toTopOf="@+id/textViewMerkKendaraan"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/textViewParkingName"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <Button
+                    android:id="@+id/buttonSelesaikan"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_margin="10dp"
+                    android:layout_marginTop="27dp"
+                    android:text="Selesaikan"
+                    android:visibility="visible"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/textView_location"
+                    app:layout_constraintTop_toBottomOf="@+id/textViewMerkKendaraan" />
+
+                <TextView
+                    android:id="@+id/textViewMerkKendaraan"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="36dp"
+                    android:text="MerkKendaraan"
+                    app:layout_constraintStart_toStartOf="@+id/textViewPlatKendaraan"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="30dp"
+            android:backgroundTint="@color/cardview_light_background"
+            android:padding="30dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/cardView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="10dp">
+
+                <TextView
+                    android:id="@+id/textViewTidakParkir"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Tidak ada parkir aktif"
+                    android:textSize="25dp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_search_parking"
+            android:layout_width="169dp"
+            android:layout_height="183dp"
+            android:layout_marginTop="4dp"
+            android:padding="10dp"
+            android:text="Cari Parkir"
+            app:cornerRadius="20dp"
+            app:icon="@drawable/baseline_local_parking_24"
+            app:iconGravity="top"
+            app:iconSize="100dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/materialButton"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cardView" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/materialButton"
+            android:layout_width="169dp"
+            android:layout_height="183dp"
+            android:layout_marginTop="14dp"
+            android:padding="10dp"
+            android:text="Histori Parkir"
+            app:cornerRadius="20dp"
+            app:icon="@drawable/baseline_history_24"
+            app:iconGravity="top"
+            app:iconSize="100dp"
+            app:layout_constraintBottom_toBottomOf="@+id/button_search_parking"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/button_search_parking"
+            app:layout_constraintTop_toTopOf="@+id/button_search_parking"
+            app:layout_constraintVertical_bias="1.0" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!--    <androidx.fragment.app.FragmentContainerView-->
+    <!--        android:id="@+id/fragmentContainerView"-->
+    <!--        android:name="com.example.pmob2.view.ui.MapsCariParkirFragment"-->
+    <!--        android:layout_width="408dp"-->
+    <!--        android:layout_height="663dp"-->
+    <!--        android:layout_marginBottom="2dp"-->
+    <!--        app:layout_constraintBottom_toTopOf="@+id/bottomNavigation"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toTopOf="parent"-->
+    <!--        app:layout_constraintVertical_bias="0.0" />-->
+    <!--    <TextView-->
+    <!--        android:id="@+id/credential"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginTop="156dp"-->
+    <!--        android:text="TextView"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintHorizontal_bias="0.498"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toTopOf="parent" />-->
+
+    <!--    <Button-->
+    <!--        android:id="@+id/signOut"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:text="Sign Out"-->
+    <!--        tools:layout_editor_absoluteX="163dp"-->
+    <!--        tools:layout_editor_absoluteY="557dp" />-->
 </androidx.constraintlayout.widget.ConstraintLayout>

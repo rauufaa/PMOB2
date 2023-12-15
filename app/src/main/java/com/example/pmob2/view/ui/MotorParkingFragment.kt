@@ -32,6 +32,7 @@ class MotorParkingFragment : Fragment() {
     private var param2: String? = null
     private lateinit var db: FirebaseFirestore
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
@@ -48,6 +49,8 @@ class MotorParkingFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         val reqData = ArrayList<ParkingLocationModel>()
+
+
         db = FirebaseFirestore.getInstance()
         val view = inflater.inflate(R.layout.fragment_motor_parking, container, false)
         val recyclerView = view.findViewById<RecyclerView>(R.id.recyclerView_motor_parking)
@@ -83,7 +86,7 @@ class MotorParkingFragment : Fragment() {
 
                 for (document in result) {
                     val pinLoc = document.getGeoPoint("lokasi")
-                    val data = ParkingLocationModel(document.id,document.data["nama"].toString(), pinLoc)
+                    val data = ParkingLocationModel(document.id, document.data["jenis"].toString(),document.data["nama"].toString(), document.data["alamat"].toString(), document.data["jumlah"].toString(), pinLoc, document.data["harga"].toString())
                     reqData.add(data)
 
 

@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.pmob2.R
 import com.example.pmob2.service.model.ParkingLocationModel
+import com.example.pmob2.view.adapter.ParkingCarAdapter
 import com.example.pmob2.view.adapter.ParkingMotorAdapter
 import com.google.firebase.firestore.FirebaseFirestore
 
@@ -46,10 +47,10 @@ class CarParkingFragment : Fragment() {
         // Inflate the layout for this fragment
         val reqData = ArrayList<ParkingLocationModel>()
         db = FirebaseFirestore.getInstance()
-        val view = inflater.inflate(R.layout.fragment_motor_parking, container, false)
-        val recyclerView = view.findViewById<RecyclerView>(R.id.recyclerView_motor_parking)
+        val view = inflater.inflate(R.layout.fragment_car_parking, container, false)
+        val recyclerView = view.findViewById<RecyclerView>(R.id.recyclerView_car_parking)
         recyclerView.layoutManager = LinearLayoutManager(context)
-        val adapter = ParkingMotorAdapter(reqData)
+        val adapter = ParkingCarAdapter(reqData)
         recyclerView.adapter = adapter
 //        db.collection("parking_locaton")
 //            .addSnapshotListener{value, e->
@@ -80,7 +81,7 @@ class CarParkingFragment : Fragment() {
 
                 for (document in result) {
                     val pinLoc = document.getGeoPoint("lokasi")
-                    val data = ParkingLocationModel(document.id,document.data["nama"].toString(), pinLoc)
+                    val data = ParkingLocationModel(document.id, document.data["jenis"].toString(),document.data["nama"].toString(), document.data["alamat"].toString(), document.data["jumlah"].toString(), pinLoc, document.data["harga"].toString())
                     reqData.add(data)
 
 

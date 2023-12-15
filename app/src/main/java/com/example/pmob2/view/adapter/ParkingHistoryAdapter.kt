@@ -25,7 +25,7 @@ class ParkingHistoryAdapter(private val dataSet: Array<String>) : RecyclerView.A
         return ViewHolder(view)
     }
 
-    override fun getItemCount() = 10
+    override fun getItemCount() = dataSet.size
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
 //        holder.textView.text = dataSet[position]

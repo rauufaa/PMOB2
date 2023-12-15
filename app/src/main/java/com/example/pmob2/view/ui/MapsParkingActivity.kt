@@ -10,22 +10,22 @@ import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
-import com.example.pmob2.databinding.ActivityMapsSearchParkingBinding
+import com.example.pmob2.databinding.ActivityMapsParkingBinding
 
-class MapsSearchParkingActivity : AppCompatActivity(), OnMapReadyCallback {
+class MapsParkingActivity : AppCompatActivity(), OnMapReadyCallback {
 
     private lateinit var mMap: GoogleMap
-    private lateinit var binding: ActivityMapsSearchParkingBinding
+private lateinit var binding: ActivityMapsParkingBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        binding = ActivityMapsSearchParkingBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+     binding = ActivityMapsParkingBinding.inflate(layoutInflater)
+     setContentView(binding.root)
 
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         val mapFragment = supportFragmentManager
-            .findFragmentById(R.id.map) as SupportMapFragment
+                .findFragmentById(R.id.map) as SupportMapFragment
         mapFragment.getMapAsync(this)
     }
 

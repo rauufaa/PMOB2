@@ -50,12 +50,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="4dp"
-        android:layout_marginBottom="4dp"
         android:text="Cari Parkir"
         android:textSize="25sp"
         app:layout_constraintBottom_toBottomOf="@+id/button_back2"
         app:layout_constraintStart_toEndOf="@+id/button_back2"
-        app:layout_constraintTop_toTopOf="@+id/button_back" />
+        app:layout_constraintTop_toTopOf="@+id/button_back2" />
 
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/viewPager_parking"

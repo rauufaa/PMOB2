@@ -4,7 +4,11 @@ import com.google.firebase.firestore.GeoPoint
 
 data class ParkingLocationModel(
     val id: String = "",
+    val jenis: String = "",
     val nama: String = "",
+    val alamat: String = "",
+    val jumlah: String = "",
     val lokasi: GeoPoint?,
-    val biaya: Int = 1
+    val biaya: String = "",
+    val idParkiran: String = ""
 )

@@ -16,10 +16,9 @@
     android:backgroundTint="@color/cardview_light_background">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:padding="10dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        >
+        android:padding="10dp">
 
         <ImageView
             android:id="@+id/imageview_location"
@@ -29,12 +28,12 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.072"
-            app:layout_constraintRight_toLeftOf="@+id/textView_parkingname"
+            app:layout_constraintRight_toLeftOf="@+id/textViewParkingName"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/textView_parkingname"
+            android:id="@+id/textViewParkingName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="I'm a title"
@@ -53,9 +52,32 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:text="Jl. Bimokurdo"
-            app:layout_constraintStart_toStartOf="@+id/textView_parkingname"
-            app:layout_constraintTop_toBottomOf="@+id/textView_parkingname" />
+            app:layout_constraintStart_toStartOf="@+id/textViewParkingName"
+            app:layout_constraintTop_toBottomOf="@+id/textViewParkingName" />
+
+        <TextView
+            android:id="@+id/textView10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="280dp"
+            android:layout_marginTop="16dp"
+            android:text="Sisa"
+            app:layout_constraintEnd_toStartOf="@+id/textView13"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/textView_location" />
+
+        <TextView
+            android:id="@+id/textViewSisa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/textView10"
+            app:layout_constraintTop_toTopOf="@+id/textView10" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
 </androidx.cardview.widget.CardView>

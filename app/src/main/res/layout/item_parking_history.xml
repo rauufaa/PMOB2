@@ -36,10 +36,10 @@
             android:src="@drawable/front_app_image"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView"
-            app:layout_constraintRight_toLeftOf="@+id/textView_parkingname"/>
+            app:layout_constraintRight_toLeftOf="@+id/textViewParkingName"/>
 
         <TextView
-            android:id="@+id/textView_parkingname"
+            android:id="@+id/textViewParkingName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="I'm a title"
@@ -60,7 +60,7 @@
             app:layout_constraintBottom_toBottomOf="@+id/imageview_location"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.75"
-            app:layout_constraintStart_toEndOf="@+id/textView_parkingname"
+            app:layout_constraintStart_toEndOf="@+id/textViewParkingName"
             app:layout_constraintTop_toTopOf="@+id/imageview_location"
             app:layout_constraintVertical_bias="0.06999999" />
 
@@ -93,8 +93,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:text="Jl. Bimokurdo"
-            app:layout_constraintStart_toStartOf="@+id/textView_parkingname"
-            app:layout_constraintTop_toBottomOf="@+id/textView_parkingname" />
+            app:layout_constraintStart_toStartOf="@+id/textViewParkingName"
+            app:layout_constraintTop_toBottomOf="@+id/textViewParkingName" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

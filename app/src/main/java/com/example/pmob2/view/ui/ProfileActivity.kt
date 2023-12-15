@@ -9,6 +9,9 @@ import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.auth
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 
 class ProfileActivity : AppCompatActivity() {
     private lateinit var mGoogleSignInClient: GoogleSignInClient
@@ -19,7 +22,7 @@ class ProfileActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         binding = ActivityProfileBinding.inflate(layoutInflater)
-        mAuth = FirebaseAuth.getInstance()
+        mAuth = Firebase.auth
 
 
         val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
@@ -28,7 +31,8 @@ class ProfileActivity : AppCompatActivity() {
             .build()
 
         mGoogleSignInClient = GoogleSignIn.getClient(this, gso)
-
+        binding.textView7.text = mAuth.currentUser?.displayName
+        binding.textView3.text = mAuth.currentUser?.email
         setContentView(binding.root)
 
 
